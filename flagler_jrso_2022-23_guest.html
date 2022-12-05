@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Flagler College</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/style.css"> 
+        <link rel="stylesheet" type="text/css" href="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/guest.css"> 
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+
+        <script>
+            $(document).ready(function(){
+                $('#check1').change(function(){
+                    if(this.checked) {
+                    } else {
+                        $("#studentname").val("");
+                        $("#phone").val("");
+                    }
+                });
+            });
+
+            function mySubmit() {
+                var today = new Date();
+                var myDate = String(today.getDate());
+                var myMonth = String(today.getMonth());
+                var myHours = String(today.getHours());
+                var myMin = String(today.getMinutes());
+                var mySec = String(today.getSeconds());
+                var prospid = "G"+myHours+myMin+mySec;
+
+                if (check1.checked == 1){
+                    document.getElementById("parent_email").value = document.getElementById("em").value;
+                    document.getElementById("parent_firstname").value = document.getElementById("fn").value;
+                    document.getElementById("parent_lastname").value = document.getElementById("ln").value;
+                    var str = document.getElementById("studentname").value;
+                    var nameArray = str.split(" ");
+                    document.getElementById("firstname").value = nameArray[0];
+                    document.getElementById("lastname").value = nameArray[1];                   
+                    document.getElementById("purl").value = nameArray[0] + nameArray[1] + myMonth + myDate;
+                    document.getElementById("campprospid").value = prospid;
+                }
+                else {
+                    var myFN2 = document.getElementById("fn").value;
+                    var myLN2 = document.getElementById("ln").value;
+                    var myPURL2 = myFN2 + myLN2 + myMonth + myDate;
+                    document.getElementById("firstname").value = myFN2;
+                    document.getElementById("lastname").value = myLN2;
+                    document.getElementById("email").value = document.getElementById("em").value; 
+                    document.getElementById("purl").value = myPURL2;
+                    document.getElementById("campprospid").value = prospid;                     
+                }
+                document.getElementById("myform").submit();
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <div class="floater" style="position: fixed; top:0; height:100%; width:100%; z-index:80; opacity: 0.9; background-color:#f2633a; overflow: auto;">
+            &nbsp;
+        </div>
+
+        <div class="popup" name="popup" ng-app>
+            <div class="entry-header2">
+                <p>THANKS FOR GIVING US A LOOK. PLEASE TAKE A<br>SEC & TELL US ABOUT&nbsp;YOU.</p>
+            </div> 
+            <div class="dotted-line"></div>
+
+            <form name="myform" method="post" id="myform" novalidate>
+                
+                <input type="hidden" name="parent_email" id="parent_email">
+                <input type="hidden" name="parent_firstname" id="parent_firstname">
+                <input type="hidden" name="parent_lastname" id="parent_lastname">
+                <input type="hidden" name="firstname" id="firstname">
+                <input type="hidden" name="lastname" id="lastname">
+                <input type="hidden" name="email" id="email">
+                <input type="hidden" name="purl" id="purl">
+                <input type="hidden" name="listnickname" id="listnickname" value="GuestVisitor">
+                <input type="hidden" name="campprospid" id="campprospid">
+
+                <div class="group" style="margin-left:19px;">
+                    <input type="text" class="inputMaterial first" name="fn" id="fn"
+                        ng-model="fn"
+                        ng-required="true">
+                    <label>First Name</label>                    
+                </div>
+                <p class="error validationerror" ng-show="myform.fn.$invalid && myform.fn.$touched">
+                    You must enter your First Name.</p>
+
+                <div class="group" style="margin-left:19px;">
+                    <input type="text" class="inputMaterial" name="ln" id="ln"
+                        ng-model="ln" ng-required="true">
+                    <label>Last Name</label>
+                </div>
+                <p class="error validationerror" ng-show="myform.ln.$invalid && myform.ln.$touched">
+                    You must enter your lastname.</p>
+          
+                <div class="group" style="margin-left:19px;">
+                    <input type="email" class="inputMaterial" name="em" id="em"
+                        ng-model="em" ng-required="true">
+                    <label>Email Address</label>
+                </div>
+                <p class="error validationerror" ng-show="myform.em.$invalid && myform.em.$touched">
+                    You must enter a valid email.
+                </p>
+
+                <div class="checkbox" style="color:#ffffff; height:30px; line-height:31px; padding-left:20px; padding-top:0; margin-top:0;" align="left">  
+                    <input id="check1" type="checkbox" name="check" value="check1" ng-model="myCheckbox">  
+                    <label for="check1">&nbsp;&nbsp;&nbsp;&nbsp;I&rsquo;m a parent</label>
+                </div>
+
+                <div class="group p2" ng-show="myCheckbox" style="margin-left:19px;">
+                    <input type="text" class="inputMaterial second" name="sn" id="studentname"
+                        ng-model="sn" ng-required="myCheckbox">
+                    <label>Student Name</label>
+                </div>
+                <p class="error validationerror" ng-show="myform.sn.$invalid && myform.sn.$touched">
+                    You must enter a Student Name.
+                </p>
+        
+                <div class="group p2" ng-show="myCheckbox">
+                    <input type="phone" class="inputMaterial" name="phone" id="phone" ng-model="phone" ng-minlength="10" ng-maxlength="10" ng-required="phone">
+                    <label>Phone Number for texting (optional)</label>
+                </div>
+                <p class="error validationerror" ng-show="myform.phone.$invalid && myform.phone.$touched">
+                    You must enter a valid phone with only numbers.
+                </p>
+
+                <div class="buttonwrap" style="background-color:transparent; text-align: center; padding-top:20px;">
+                    <button type="submit" class="guest-off" ng-disabled="myform.$pristine || myform.$invalid" onclick="mySubmit()">
+                        <img class="img-responsive" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/FlaglerButton.png" style="width:280px; border:0; opacity: 1;">
+                    </button>
+                    <button type="sunmit" class="guest-on" ng-disabled="myform.$valid">
+                        <img class="img-responsive" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/FlaglerButtonBW.png" style="width:280px; border:0; opacity:1;">
+                    </button>
+                </div>
+            </form>
+        </div>  
+
+        <div class="container">
+            <div class="row">
+                <div class="hidden-xs col-sm-12 nopadding">
+                    <a href="https://www.flagler.edu/admissions--aid/" target="_blank"> 
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/LP_Header2.png" border="0">
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                    <a href="https://www.flagler.edu/admissions--aid/" target="_blank">
+                        <img class="img-responsive mobi-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/LP_Header_Mobi2.png" border="0">
+                    </a>
+                </div>
+            </div>                                  
+            <div class="row main-txtrow">
+                <div class="col-xs-12 main-txt">
+                    <p style="padding:20px 0;">
+                            &hellip; and it’s your move, <font style="color:#a52238;">##firstname##</font>.<br>
+                            Time to focus on college and See Flagler, especially now, when everything feels intense and you’re probably thinking about what’s next in your life.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 left-col">
+                    <a href="https://www.flagler.edu/admissions--aid/" target="_blank">
+                        <img class="img-responsive left-col-img" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/LP_OurDeets.png" border="0">
+                    </a>
+                    <p class="left-p" style="padding-bottom:10px;">
+                        Flagler sees you, the whole you.
+                    </p>
+                    <p class="left-p">
+                        <a href="https://www.flagler.edu/academics/departments--programs/" target="_blank">
+                            <font class="a-txt">DEFINE YOUR FUTURE.</font></a><br><br>
+                        <a href="https://www.flagler.edu/academics/flagship/" target="_blank">
+                            <font class="a-txt">LEARN BY DOING.</font></a><br><br>
+                        <a href="https://www.flagler.edu/admissions--aid/how-to-apply/freshmen-/" target="_blank">
+                            <font class="a-txt">BE MORE THAN A SCORE.</font></a>
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-6 right-col">
+                    <a href="https://www.flagler.edu/admissions--aid/visit-flagler/" target="_blank">
+                        <img class="img-responsive right-col-img" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/LP_LetsMeet.png" border="0">
+                    </a>
+                    <table style="padding:0; margin:0;">
+                        <tr><td>
+                            <p class="right-p">
+                                St. Augustine rocks (and waves).<br>
+                                Your virtual visit is a click away.<br>                           
+                            </p>
+                            <P class="right-p">
+                                <a href="https://www.youvisit.com/tour/flagler#" target="_blank">
+                                    <font class="a-txt">TAKE A LOOK.</font></a><br><br>
+                                <a href="https://www.flagler.edu/admissions--aid/visit-flagler/" target="_blank">
+                                    <font class="a-txt">READY TO BOOK.</font></a>
+                                </p>
+                        </td></tr>
+                    </table> 
+                </div>                
+            </div>
+            <div class="row">
+                <div class="hidden-xs col-sm-12 nopadding">
+                    <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2021/images/2021_R1.png" border="0">
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                    <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2021/images/2021_R1_Mobi.png" border="0">
+                </div>
+            </div>                 
+            <div class="row">
+                <div class="hidden-xs col-sm-6 nopadding">
+                    <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2021/images/2021_R2_L2.png" border="0" style="cursor:pointer;" onclick="myMasterClass();">
+                </div>
+                <div class="hidden-xs col-sm-6 nopadding">
+                    <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2021/images/2021_R2_R2.png" border="0" style="cursor:pointer;" onclick="myFlagship();">
+                </div>
+                <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                    <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2021/images/2021_R2_L2_Mobi.png" border="0" style="cursor:pointer;" onclick="myMasterClass();">
+                </div>
+                <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                    <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2021/images/2021_R2_R_Mobi.png" border="0" style="cursor:pointer;" onclick="myFlagship();">
+                </div>                     
+            </div>
+            <div class="row">
+                <div class="hidden-xs col-sm-12 nopadding">
+                    <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/New_R3.png" border="0">
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                    <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/New_R3_Mobi.png" border="0">
+                </div>
+            </div>                 
+            <div class="row">
+                <div class="hidden-xs col-sm-12 nopadding">
+                    <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/New_R4.png" border="0">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                    <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/New_R4_Mobi.png" border="0">
+                </div>
+            </div>                       
+            <div class="row footer-row">
+                <div class="col-xs-12 col-sm-4 footer-col1">
+                    <a href="https://www.flagler.edu/admissions--aid/" target="_blank">
+                        <img class="img-responsive logo-img" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/FlaglerLogo.png" border="0">
+                    </a>    
+                </div>
+                <div class="col-xs-12 col-sm-4 footer-col2">
+                    74 King Street, St.&nbsp;Augustine, FL 32084
+                </div>
+                <div class="col-xs-12 col-sm-4 footer-col3">
+                    &copy; Copyright ##copyyear## Flagler College
+                </div>                                
+            </div>
+        </div> 
+
+   </body>
+</html>

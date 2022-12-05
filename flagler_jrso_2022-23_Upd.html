@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/Updstyle.css"> 
+        <title>Flagler</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" defer></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="hidden-xs col-sm-12 nopadding">
+                    <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/UPDTY_Header.png">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                    <img class="img-responsive mobi-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/UPDTY_Header_Mobi.png">
+                </div>
+            </div>                                  
+            <div class="row main-txtrow">
+                <div class="col-xs-12 upd-text">
+                    <p style="padding:0 0 15px 0;">
+                        THANKS FOR TAKING A MOMENT TO UPDATE YOUR INFO!
+                    </p>
+                </div>
+            </div>
+            <form id="MyFormID" method="post">
+            <div class="row formentry">
+                <div class="col-xs-12 col-sm-6 left-col" style="vertical-align: top;">
+                    <p class="left-p">
+                        You
+                    </p>
+                    <p class="left-p">
+                        <input type="text" name="firstname" placeholder="First Name" value="##firstname##">
+                        <input type="text" name="lastname" placeholder="Last Name" value="##lastname##">
+                        <input type="email" name="email" placeholder="Email" value="##email##">                                                
+                        <input type="text" name="phone" placeholder="Home Phone" value="##phone##">
+                        <input type="text" name="mobile" placeholder="Cell Phone" value="##mobile##">
+                        <input type="text" name="hs_name" placeholder="High School Name" value="##hs_name##">                                                                        
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-6 right-col" style="vertical-align: top;">
+                    <p class="right-p">
+                        Your Address
+                    </p>
+                    <P class="right-p">
+                        <input type="text" name="address1" placeholder="Address 1" value="##address1##">
+                        <input type="text" name="address2" placeholder="Address 2" value="##address2##">
+                        <input type="text" name="city" placeholder="City" value="##city##">
+                        <input type="text" name="state" placeholder="State" value="##state##">
+                        <input type="text" name="zip" placeholder="Zip Code" value="##zip##">
+                    </p> 
+                </div>                
+            </div>
+
+            <div class="row formentry">
+                <div class="col-xs-12 col-sm-6 left-col">
+                    <p class="left-p" style="padding-bottom:10px;">
+                        Family
+                    </p>
+                    <p class="left-p">
+                        <input type="text" name="parent_firstname" placeholder="First Name" value="##parent_firstname##">
+                        <input type="text" name="parent_lastname" placeholder="Last Name" value="##parent_lastname##">
+                        <input type="text" name="parent_email" placeholder="Email" value="##parent_email##">                                                
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-6 right-col">
+                    <p class="right-p">
+                        Texts?
+                    </p>
+                    <div id="textingwrapper" style="padding-top:20px; padding-left:10px;">
+                        <span style="display:none;">
+                            <input 
+                                type="radio" 
+                                name="texting" 
+                                value="yes" 
+                                id="textingyes">
+                        </span>
+                        <img 
+                            id="Imagetextingyes" 
+                            src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/CheckedNo.png" 
+                            width="35" 
+                            height="35" 
+                            onclick="RadioClicked('textingyes','texting','MyFormID')" 
+                            style="cursor:pointer;">
+                        Yes
+                        <span style="display:none;">
+                            <input 
+                                type="radio" 
+                                name="texting" 
+                                value="yes" 
+                                id="textingno">
+                        </span>
+                        <img 
+                            id="Imagetextingno" 
+                            src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/CheckedNo.png" 
+                            width="35" 
+                            height="35" 
+                            onclick="RadioClicked('textingno','texting','MyFormID')" 
+                            style="cursor:pointer;"> 
+                        No 
+                    </div>                             
+                </div>                
+            </div>            
+            </form> 
+            <div class="row">
+                <div class="col-xs-12 nopadding">
+                    <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/UPD_Button.png" onclick="updateinfo()" style="cursor: pointer;">
+                </div>
+            </div>  
+ 
+            <div class="row">
+                <div class="col-xs-12 nopadding" style="height:40px;">
+                    &nbsp;
+                </div>
+            </div>  
+ 
+            <div class="row footer-row">
+                <div class="col-xs-12 col-sm-4 footer-col1">
+                    <img class="img-responsive logo-img" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/FlaglerLogo.png">
+                </div>
+                <div class="col-xs-12 col-sm-4 footer-col2">
+                    74 King Street, St.&nbsp;Augustine, FL 32084
+                </div>
+                <div class="col-xs-12 col-sm-4 footer-col3">
+                    &copy; Copyright ##copyyear## Flagler College
+                </div>                                
+            </div>
+        </div>
+        <script type="text/javascript">
+            var RadioCheckedImage = new Image();
+            var RadioUncheckedImage = new Image();
+                
+            RadioCheckedImage.src = "https://hacdn.blob.core.windows.net/flagler2020/jrsearch/Checked.png";
+            RadioUncheckedImage.src = "https://hacdn.blob.core.windows.net/flagler2020/jrsearch/CheckedNo.png";
+                
+            function RadioClicked(radioid,radiosetname,formid)
+            {
+                var form = document.getElementById(formid);
+                for( var i = 0; i < form.length; i++ )
+                {
+                    if(form[i].name == radiosetname)
+                    {
+                        document.getElementById(form[i].id).checked = false;
+                        document.getElementById("Image"+form[i].id).src = RadioUncheckedImage.src;
+                    }
+                }
+                document.getElementById(radioid).checked = true;
+                document.getElementById("Image"+radioid).src = RadioCheckedImage.src;
+                return false;
+            }
+
+            function updateinfo()
+            {
+                document.getElementById("MyFormID").submit();
+            }
+        </script>        
+   </body>
+</html>

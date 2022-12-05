@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/style.css"> 
+        <title>Flagler College</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" defer></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/hat6xva.css">
+
+        <style>
+
+        </style>
+
+        <script type="text/javascript">
+
+            function linkHistory(hist, newLink)
+            {
+                if (hist.includes(newLink))
+                {
+                    //Do Nothing
+                } else {
+                    hist = hist + ', ' + newLink;
+                }
+                return hist;
+            }
+                     
+            function myAid() {
+                var hist = document.getElementById("selectedlink").value;
+                document.getElementById("selectedlink").value = linkHistory(hist, "Admissions");
+                document.getElementById('selectedlinkLast').value = "Admissions";
+                document.getElementById("FlaglerForm").submit();
+            };
+   
+            function myPrograms() {
+                var hist = document.getElementById("selectedlink").value;
+                document.getElementById("selectedlink").value = linkHistory(hist, "Programs");
+                document.getElementById('selectedlinkLast').value = "Programs";
+                document.getElementById("FlaglerForm").submit();
+            };             
+   
+            function myFlagship() {
+                var hist = document.getElementById("selectedlink").value;
+                document.getElementById("selectedlink").value = linkHistory(hist, "Flagship");
+                document.getElementById('selectedlinkLast').value = "Flagship";
+                document.getElementById("FlaglerForm").submit();
+            };
+   
+                function myFreshman() {
+                    var hist = document.getElementById("selectedlink").value;
+                    document.getElementById("selectedlink").value = linkHistory(hist, "Freshman");
+                    document.getElementById('selectedlinkLast').value = "Freshman";
+                    document.getElementById("FlaglerForm").submit();
+                };
+          
+                function myVisit() {
+                    var hist = document.getElementById("selectedlink").value;
+                    document.getElementById("selectedlink").value = linkHistory(hist, "Visit");
+                    document.getElementById('selectedlinkLast').value = "Visit";
+                    document.getElementById("FlaglerForm").submit();
+                };
+   
+                function myTour() {
+                    var hist = document.getElementById("selectedlink").value;
+                    document.getElementById("selectedlink").value = linkHistory(hist, "Tour");
+                    document.getElementById('selectedlinkLast').value = "Tour";
+                    document.getElementById("FlaglerForm").submit();
+                }; 
+   
+                function myVideo() {
+                    var hist = document.getElementById("selectedlink").value;
+                    document.getElementById("selectedlink").value = linkHistory(hist, "Video");
+                    document.getElementById('selectedlinkLast').value = "Video";
+                    document.getElementById("FlaglerForm").submit();
+                };   
+
+                function myFearless() {
+                    var hist = document.getElementById("selectedlink").value;
+                    document.getElementById("selectedlink").value = linkHistory(hist, "Fearless");
+                    document.getElementById('selectedlinkLast').value = "Fearless";
+                    document.getElementById("FlaglerForm").submit();
+                };                                 
+   
+           </script>
+
+    </head>
+    <body>
+        <form id="FlaglerForm" method="post">
+
+            <input type="hidden" name="selectedlink" id="selectedlink" value="##selectedlink##" />
+            <input type="hidden" name="selectedlinkLast" id="selectedlinkLast" value="" />
+
+            <div class="container">
+                <div class="row">
+                    <div class="hidden-xs col-sm-12 nopadding">
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/LP_Header2.png" border="0" style="cursor:pointer;" onclick="myAid();">
+                    </div>
+                </div>            
+                <div class="row">
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                        <img class="img-responsive mobi-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/LP_Header_Mobi2.png" border="0" style="cursor:pointer;" onclick="myAid();">
+                    </div>
+                </div>                                  
+                <div class="row main-txtrow">
+                    <div class="col-xs-12 main-txt" style="border-bottom: 0;">
+                        <p style="padding:20px 0;">
+                            &hellip; and it’s your move, <font style="color:#a52238;">##firstname##</font>.<br>
+                            Time to focus on college and See Flagler, especially now, when everything feels intense and you’re probably thinking about what’s next in your life.
+                        </p>
+                    </div>
+                </div>
+<!--
+<a href="https://flagler.secure.force.com/events#/calendar" target="_blank" style="text-decoration:none;">
+                <div class="SS" style="
+                    background-color: #6e615e; 
+                    color:#fdb924; 
+                    padding: 15px 40px; 
+                    margin-bottom: 50px; 
+                    font-size:45px; 
+                    font-weight: bold; 
+                    text-transform: uppercase;
+                    text-align: left;
+                    font-family: franklin-gothic-condensed, sans-serif;
+                    font-weight: 700;
+                    font-style: normal;
+                    letter-spacing: 2px;">
+                    Open House 2020 Style <font style="color:#ffffff; font-size:15px; vertical-align: middle;">&#9632;</font> Saints Series <font style="color:#ffffff;">&raquo;</font>    
+                </div>
+</a>
+-->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 left-col">
+                        <img class="img-responsive left-col-img" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/LP_OurDeets.png" border="0" style="cursor:pointer;" onclick="myAid();">
+                        <p class="left-p" style="padding-bottom:10px;">
+                            Flagler sees you, the whole you.
+                        </p>
+                        <p class="left-p">
+                            <font class="a-txt" style="cursor:pointer;" onclick="myPrograms()">DEFINE YOUR FUTURE.</font>
+                            <br><br>
+                            <font class="a-txt" style="cursor:pointer;" onclick="myFlagship()">LEARN BY DOING.</font>
+                            <br><br>
+                            <font class="a-txt" style="cursor:pointer;" onclick="myFreshman()">BE MORE THAN A SCORE.</font>
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 right-col">
+                        <img class="img-responsive right-col-img" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/LP_LetsMeet.png" border="0" style="cursor:pointer;" onclick="myVisit();">
+                        <table style="padding:0; margin:0;">
+                            <tr><td>
+                                <p class="right-p">
+                                    St. Augustine rocks (and waves).<br>
+                                    We can&rsquo;t wait to show you, online or in-person.<br>                             
+                                </p>
+                                <P class="right-p">
+                                    <font class="a-txt" style="cursor:pointer;" onclick="myTour()">TAKE A LOOK.</font>
+                                    <br><br>
+                                    <font class="a-txt" style="cursor:pointer;" onclick="myVisit();">READY TO BOOK.</font>
+                                    </p>
+                            </td></tr>
+                        </table>
+                    </div>                
+                </div>
+                <div class="row">
+                    <div class="hidden-xs col-sm-12 nopadding">
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2021/images/2021_R1.png" border="0">
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2021/images/2021_R1_Mobi.png" border="0">
+                    </div>
+                </div>                 
+                <div class="row">
+                    <div class="hidden-xs col-sm-6 nopadding">
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2021/images/2021_R2_L2.png" border="0" style="cursor:pointer;" onclick="myFearless();">
+                    </div>
+                    <div class="hidden-xs col-sm-6 nopadding">
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2021/images/2021_R2_R2.png" border="0" style="cursor:pointer;" onclick="myFlagship();">
+                    </div>
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2021/images/2021_R2_L2_Mobi.png" border="0" style="cursor:pointer;" onclick="myFearless();">
+                    </div>
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2021/images/2021_R2_R_Mobi.png" border="0" style="cursor:pointer;" onclick="myFlagship();">
+                    </div>                     
+                </div>
+                <div class="row">
+                    <div class="hidden-xs col-sm-12 nopadding">
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/New_R3.png" border="0">
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/New_R3_Mobi.png" border="0">
+                    </div>
+                </div>                 
+                <div class="row">
+                    <div class="hidden-xs col-sm-12 nopadding">
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/New_R4.png" border="0">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/New_R4_Mobi.png" border="0">
+                    </div>
+                </div>                
+                <div class="row footer-row">
+                    <div class="col-xs-12 col-sm-4 footer-col1">
+                        <img class="img-responsive logo-img" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/FlaglerLogo.png" border="0" style="cursor:pointer;" onclick="myAid();">
+                    </div>
+                    <div class="col-xs-12 col-sm-4 footer-col2">
+                        74 King Street, St.&nbsp;Augustine, FL 32084
+                    </div>
+                    <div class="col-xs-12 col-sm-4 footer-col3">
+                        &copy; Copyright ##copyyear## Flagler College
+                    </div>                                
+                </div>
+            </div>
+        </form>
+   </body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/style.css"> 
+        <link rel="stylesheet" type="text/css" href="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/pstyle.css"> 
+        <title>Flagler College</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" defer></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/hat6xva.css">
+
+        <style>
+
+        </style>
+
+        <script type="text/javascript">
+
+            function linkHistory(hist, newLink)
+            {
+                if (hist.includes(newLink))
+                {
+                    //Do Nothing
+                } else {
+                    hist = hist + ', ' + newLink;
+                }
+                return hist;
+            }
+                     
+            function myMM() {
+                var hist = document.getElementById("selectedlinkP").value;
+                document.getElementById("selectedlinkP").value = linkHistory(hist, "MajorMinors");
+                document.getElementById('selectedlinkPLast').value = "MajorMinors";
+                document.getElementById("FlaglerForm").submit();
+            };
+   
+            function myCosts() {
+                var hist = document.getElementById("selectedlinkP").value;
+                document.getElementById("selectedlinkP").value = linkHistory(hist, "Costs");
+                document.getElementById('selectedlinkPLast').value = "Costs";
+                document.getElementById("FlaglerForm").submit();
+            };   
+            
+            function myCampusSafety() {
+                var hist = document.getElementById("selectedlinkP").value;
+                document.getElementById("selectedlinkP").value = linkHistory(hist, "CampusSafety");
+                document.getElementById('selectedlinkPLast').value = "CampusSafety";
+                document.getElementById("FlaglerForm").submit();                
+            }
+   
+            function myFinancialAid() {
+                var hist = document.getElementById("selectedlinkP").value;
+                document.getElementById("selectedlinkP").value = linkHistory(hist, "FinancialAid");
+                document.getElementById('selectedlinkPLast').value = "FinancialAid";
+                document.getElementById("FlaglerForm").submit();
+            };
+   
+            function myDates() {
+                var hist = document.getElementById("selectedlinkP").value;
+                document.getElementById("selectedlinkP").value = linkHistory(hist, "Dates");
+                document.getElementById('selectedlinkPLast').value = "Dates";
+                document.getElementById("FlaglerForm").submit();
+            };
+          
+            function myVisit() {
+                var hist = document.getElementById("selectedlinkP").value;
+                document.getElementById("selectedlinkP").value = linkHistory(hist, "Visit");
+                document.getElementById('selectedlinkPLast').value = "Visit";
+                document.getElementById("FlaglerForm").submit();
+            };
+   
+            function mySeeStAugustine() {
+                var hist = document.getElementById("selectedlinkP").value;
+                document.getElementById("selectedlinkP").value = linkHistory(hist, "SeeStAugustine");
+                document.getElementById('selectedlinkPLast').value = "SeeStAugustine";
+                document.getElementById("FlaglerForm").submit();
+            }; 
+   
+            function myTravelInfo() {
+                var hist = document.getElementById("selectedlinkP").value;
+                document.getElementById("selectedlinkP").value = linkHistory(hist, "TravelInfo");
+                document.getElementById('selectedlinkPLast').value = "TravelInfo";
+                document.getElementById("FlaglerForm").submit();
+            }; 
+            
+            function myFavsVideo() {
+                var hist = document.getElementById("selectedlinkP").value;
+                document.getElementById("selectedlinkP").value = linkHistory(hist, "FavsVideo");
+                document.getElementById('selectedlinkPLast').value = "FavsVideo";
+                document.getElementById("FlaglerForm").submit();                
+            }
+
+            function myFamilyWeekend() {
+                var hist = document.getElementById("selectedlinkP").value;
+                document.getElementById("selectedlinkP").value = linkHistory(hist, "FamilyWeekend");
+                document.getElementById('selectedlinkPLast').value = "FamilyWeekend";
+                document.getElementById("FlaglerForm").submit();
+            };                                 
+        </script>
+    </head>
+    <body>
+        <form id="FlaglerForm" method="post">
+
+            <input type="hidden" name="selectedlinkP" id="selectedlinkP" value="##selectedlinkP##" />
+            <input type="hidden" name="selectedlinkPLast" id="selectedlinkPLast" value="" />
+
+            <div class="container">
+                <div class="row">
+                    <div class="hidden-xs col-sm-12 nopadding">
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/PLP_Header.png" 
+                            border="0" style="cursor:pointer;" onclick="">
+                    </div>
+                </div>            
+                <div class="row">
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                        <img class="img-responsive mobi-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/PLP_Header_Mobi.png" 
+                            border="0" style="cursor:pointer;" onclick="myAid();">
+                    </div>
+                </div>                                  
+
+                <div class="row main-txtrow">
+                    <div class="col-xs-12 main-txt" style="border-bottom: 0;">
+                        <p class="hdr_text" style="">
+                            <font style="color:#f2633a; " >
+                                COLLEGE SEARCH IS HERE.</font><br>
+                            HOW DO I HELP ##firstname##?
+                        </p>
+                        <p style="padding:20px 0 0;">
+                            Your time is precious, and there&rsquo;s something new on your plate &hellip; helping <font style="color:#a52238;">##firstname##</font> navigate the college search process. Flagler knows you&rsquo;ve got important questions. We&rsquo;re here to help you find the answers.
+                        </p>    
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 left-col">
+                        <p class="left-p" style="padding-bottom:5px; font-weight: bold; color:#c06474; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 36.5px;">
+                            BRASS TACKS
+                        </p>                        
+                        <p class="left-p">
+                            <button type="button" style="width:340px; text-align: left; vertical-align: middle; margin-bottom: 10px; background-color: #9a908e; color:#fff; border-radius: 0;" class="btn" onclick="myMM()" >
+                                <span class="btn-txt">Majors & Minors</span><img src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/PLP_ButtonDecoration.png" width="40px" style="float:right;">
+                            </button>
+                            <br>
+                            <button type="button" style="width:340px; text-align: left; margin-bottom: 10px; background-color: #9a908e; color:#fff; border-radius: 0;" class="btn" onclick="myCosts()" >
+                                <span class="btn-txt">Costs</span><img src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/PLP_ButtonDecoration.png" width="40px" style="float:right;">
+                            </button>                            
+                            <br>
+                            <button type="button" style="width:340px; text-align: left; margin-bottom: 10px; background-color: #9a908e; color:#fff; border-radius: 0;" class="btn" onclick="myFinancialAid()" >
+                                <span class="btn-txt">Financial Aid</span><img src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/PLP_ButtonDecoration.png" width="40px" style="float:right;">
+                            </button>
+                            <br>
+                            <button type="button" style="width:340px; text-align: left; margin-bottom: 10px; background-color: #9a908e; color:#fff; border-radius: 0;" class="btn" onclick="myCampusSafety()" >
+                                <span class="btn-txt">Campus Safety</span><img src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/PLP_ButtonDecoration.png" width="40px" style="float:right;">
+                            </button>
+                            <br>                            
+                            <button type="button" style="width:340px; text-align: left; margin-bottom: 10px; background-color: #9a908e; color:#fff; border-radius: 0;" class="btn" onclick="myDates()" >
+                                <span class="btn-txt">Dates</span><img src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/PLP_ButtonDecoration.png" width="40px" style="float:right;">
+                            </button> 
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 right-col" style="padding-left:25px;">
+                        <p class="left-p" style="padding-bottom:5px; font-weight: bold; color:#c06474; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 36.5px; padding-left:0;">
+                            FUN STUFF
+                        </p>
+                        <p class="">
+                            <button type="button" style="width:340px; text-align: left; margin-bottom: 10px; background-color: #9a908e; color:#fff; border-radius: 0;" class="btn" onclick="myVisit()" >
+                                <span class="btn-txt">Schedule a Visit</span><img src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/PLP_ButtonDecoration.png" width="40px" style="float:right;">
+                            </button>
+                            <br>
+                            <button type="button" style="width:340px; text-align: left; margin-bottom: 10px; background-color: #9a908e; color:#fff; border-radius: 0;" class="btn" onclick="mySeeStAugustine()" >
+                                <span class="btn-txt">See St. Augustine</span><img src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/PLP_ButtonDecoration.png" width="40px" style="float:right;">
+                            </button>
+                            <br> 
+                            <button type="button" style="width:340px; text-align: left; margin-bottom: 10px; background-color: #9a908e; color:#fff; border-radius: 0;" class="btn" onclick="myTravelInfo()" >
+                                <span class="btn-txt">Travel Info</span><img src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/PLP_ButtonDecoration.png" width="40px" style="float:right;">
+                            </button>
+                            <br>
+                            <button type="button" style="width:340px; text-align: left; margin-bottom: 10px; background-color: #9a908e; color:#fff; border-radius: 0;" class="btn" onclick="myFavsVideo()" >
+                                <span class="btn-txt">Flagler Favs Video Playlist</span><img src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/PLP_ButtonDecoration.png" width="40px" style="float:right;">
+                            </button>
+                            <br>                            
+                            <button type="button" style="width:340px; text-align: left; margin-bottom: 10px; background-color: #9a908e; color:#fff; border-radius: 0;" class="btn" onclick="myFamilyWeekend()" >
+                                <span class="btn-txt">Family Weekend</span><img src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/PLP_ButtonDecoration.png" width="40px" style="float:right;">
+                            </button>
+                            <br>                                                                                  
+                        </p>
+                    </div>                
+                </div>
+                <div class="moreq" style="text-align: left; padding:30px 20px; font-family:'Sanchez', serif; font-size: 22px; line-height: 32px;">
+                    <font style="color:#f2633a; font-size: 27px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold;" >MORE QUESTIONS? 
+                        <a href="https://www.flagler.edu/admissions--aid/admissions-team/" target="_blank" style="text-decoration: none;">
+                            <font style="border-bottom: 1px solid grey; color:#f2633a;">CONTACT US!</font></a>
+                    </font><br>
+                    <i>Families who connect with us early are more prepared with questions along the way to help make informed decisions.</i>
+                </div>
+                <!-- <div style="padding:40px 20px;">
+                    <div class="alert alert-info" role="alert" style="text-align: left; font-family:'Sanchez', serif; font-size: 18px; line-height: 28px; padding:30px 40px;">
+                        <font style="color:#f2633a; font-size: 27px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold;" >A NOTE ABOUT THESE TIMES</font><br>
+                        We&rsquo;ve been busy keeping our students 
+                        <a href="https://www.flagler.edu/campus-community/news/coronavirus/" target="_blank" style="text-decoration: none;">
+                            <font style="color:#a52238; border-bottom: 1px solid grey;">safe</font></a> 
+                        and their education on track. The best way to show families how Flagler handles unexpected circumstances and prioritizes the wellbeing of our community is to share resources with you, such as the <a href="https://www.flagler.edu/campus-community/news/coronavirus/" target="_blank" style="text-decoration: none;">
+                            <font style="color:#a52238; border-bottom: 1px solid grey;">Healthy Saints Community</font></a>. 
+                    </div>
+                </div> -->
+                <div class="row">
+                    <div class="hidden-xs col-sm-12 nopadding">
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/PLP_Footer.png" border="0">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg nopadding">
+                        <img class="img-responsive full-width" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/PLP_Footer_Mobi.png" border="0">
+                    </div>
+                </div>                
+                <div class="row footer-row">
+                    <div class="col-xs-12 col-sm-4 footer-col1">
+                        <img class="img-responsive logo-img" src="https://hacdn.blob.core.windows.net/flagler2020/jrsearch/FlaglerLogo.png" border="0" style="cursor:pointer;" onclick="myAid();">
+                    </div>
+                    <div class="col-xs-12 col-sm-4 footer-col2">
+                        74 King Street,<br>St.&nbsp;Augustine, FL 32084
+                    </div>
+                    <div class="col-xs-12 col-sm-4 footer-col3">
+                        &copy; Copyright ##copyyear## Flagler College
+                    </div>                                
+                </div>
+            </div>
+        </form>
+   </body>
+</html>
